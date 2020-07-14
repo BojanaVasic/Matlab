@@ -1,0 +1,23 @@
+n = 0 : 99;
+b = [0.3 0.6 0.3]
+a = [1 0.9 -0.3]
+u1 = [ones(1, 100)]
+u2 = [1 zeros(1, 99)]
+
+i = filter(b, a, u1)
+g =filter(b, a, u2)
+subplot(2, 2, 1), stem(n, g);
+title('Impulsni odziv');
+subplot(2, 2, 2), stem(n, i);
+title('Jedinicni odziv');
+
+% g = i(n) - i(n-1)
+
+g1 = i - [0 i(1:99)]
+subplot(2, 2, 3), stem(n, g1);
+title('Impulsni odziv na drugi nacin');
+
+% i = g(1) + g(2) + ...+ g(100)
+i1 = 0;
+for k  = 1 : 100 
+   g_pom = [ones(1, k-1) g(1:100-k+1)]  
