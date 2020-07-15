@@ -53,11 +53,12 @@ N_fft = 1024
 n = 0 : N_fft - 1;
 x = cos(2 * pi * 1000 / fs * n) + cos(2 * pi * 3000 / fs * n) + cos(2 * pi * 5000 / fs * n) 
 X = fft(x, N_fft)
-subplot(2, 2, 3), plot(n, X), title('Pobuda')
+subplot(2, 2, 3), plot(n, x), title('Pobuda')
+xlim([0 20])
 
 Y = X .* B
 y = ifft(Y)
 subplot(2, 2, 4), plot(1 : length(y), y) ,  title('Odziv')
-xlim([0 400])
+xlim([0 20])
 
     
