@@ -18,4 +18,7 @@ B = fft(b, N_fft)
 n = 0 : N_fft / 2 - 1
 f = n * (fsr/2) / (N_fft / 2 -1)  %zelimo da nam opseg ide od 0 do fsr/2
 subplot(2, 2, 1), plot(f, abs(B(1 : N_fft/2))), title('AMPLITUDSKA')
-axis([0 fsr/2 0 1.2])
+F = angle(B(1 : N_fft/2))
+subplot(2, 2, 2), plot(f, F), title('Fazna')
+
+axis([0 fsr/2 -5  5])

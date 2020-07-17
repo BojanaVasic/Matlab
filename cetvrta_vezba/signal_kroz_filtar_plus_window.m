@@ -6,7 +6,7 @@ b1 = fir1(N, fn / (fs/2), hanov)  %sinteza filtra
 
 N_fft = 1024
 B1 = fft(b1, N_fft) 
-B1a = abs(B1(1 : N_fft / 2))% filtar u frekvencijskom domenu
+B1a = abs(B1(1 : N_fft / 2))
 F = angle(B1(1:N_fft/2)); %fazna
 %frekvencijska osa
 N_fft1 = N_fft / 2 -1; % posmatramo pola
