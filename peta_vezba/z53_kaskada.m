@@ -9,7 +9,7 @@ subplot(2, 2, 2), plot(n, y), title('Izlaz')
 nule = roots(b)
 polovi = roots(a)
 u_sim =[n ; u]'
-n= 0:99;
+n= 0 : 99 ;
 subplot(2, 2, 1), stem(n, u), title('Ulaz');
 subplot(2, 2, 2), stem(n, y), title('Izlaz');
 subplot(2, 2, 3), stem(0 :length(y_kaskada') -1, y_kaskada'), title('Kaskada');
